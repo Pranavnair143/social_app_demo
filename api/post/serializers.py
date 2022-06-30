@@ -16,7 +16,7 @@ class PostReadSerializer(serializers.ModelSerializer):
     tags = serializers.SlugRelatedField(many=True,read_only=True,slug_field='name')
     class Meta:
         model=Post
-        fields=['id','description','liked_users','images','tags','like','dislike','like_num','dislike_num']
+        fields=['id','liked_users','images','tags','like','dislike','like_num','dislike_num']
     
     def get_like_num(self,instance):
         user_id=self.context['request']
